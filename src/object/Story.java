@@ -9,7 +9,7 @@ public class Story {
 		SuperHero h = new SuperHero();
 		h.setName("ゆうた");
 		System.out.println("勇者の名前は" + h.getName());
-	    h.setHp(100);
+	    h.setHp(200);
 		System.out.println("勇者のHPは" + h.getHp());
 		h.setOp(10);
 		System.out.println("勇者のOPは" + h.getOp());
@@ -22,7 +22,7 @@ public class Story {
 		System.out.println("魔法使いの名前は" + m.getName());
 		m.setHp(100);
 		System.out.println("魔法使いのHPは" + m.getHp());
-		m.setMp(20);
+		m.setMp(40);
 		System.out.println("魔法使いのOPは" + m.getMp());
 		
 		System.out.println("-------------------");
@@ -31,9 +31,9 @@ public class Story {
 		SuperMonster mo = new SuperMonster();
 		mo.setName("ドラゴン");
 		System.out.println("魔物の名前は" + mo.getName());
-		mo.setHp(400);
+		mo.setHp(500);
 		System.out.println("魔物のHPは" + mo.getHp());
-		mo.setOp(50);
+		mo.setOp(20);
 		System.out.println("魔物のOPは" + mo.getOp());
 		mo.setPc(1);
 		System.out.println("毒を" + mo.getPc() + "回使える");
@@ -41,20 +41,22 @@ public class Story {
 		System.out.println("-------------------");
 		System.out.println("-------------------");
 		
-		h.twiceAttak(mo);
-		System.out.println("-------------------");
-		
-		m.superMagic(mo);
-		System.out.println("-------------------");
-		
-		m.superMagic(mo);
-		System.out.println("-------------------");
-		
-		mo.poisonAttack(h, m);
-		System.out.println("-------------------");
-		
-		mo.poisonAttack(h, m);
-		System.out.println("-------------------");
+		while ((h.hp > 0 || m.hp > 0) && mo.hp > 0) {
+		    if (h.hp > 0) {
+		      h.twiceAttak(mo);
+		      System.out.println("-------------------");
+		    }
+		    if (m.hp > 0) {
+		      m.superMagic(mo);
+		      System.out.println("-------------------");
+		    }
+		    if (mo.hp > 0) {
+		      mo.poisonAttack(h, m);
+		      System.out.println("-------------------");
+		}
+	   }
+		 
+	}
 		
 	}
-}
+

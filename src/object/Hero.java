@@ -49,7 +49,11 @@ public class Hero {
     	System.out.println(this.name + "‚ÌUŒ‚");
     	mo.hp -= this.op;
     	System.out.println("“G‚É" + this.op + "‚Ìƒ_ƒ[ƒW");
-    	System.out.println("“G‚ÌHP‚Í" + mo.hp + "‚É‚È‚Á‚½");
+    	if (mo.hp > 0) {
+    	    System.out.println("“G‚ÌHP‚Í" + mo.hp + "‚É‚È‚Á‚½");
+    	} else {
+    		System.out.println("“G‚ð“|‚µ‚½");
+    	}
     }
     
     void heal() {

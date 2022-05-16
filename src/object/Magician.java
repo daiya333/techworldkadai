@@ -57,7 +57,12 @@ public class Magician {
 		} else {
 			System.out.println("“G‚ð“|‚µ‚½");
 		}
-		this.mp -= 10;
+		if (this.mp > 0) {
+		    this.mp -= 10 * 2;
+		} else {
+		    this.mp = 0;
+		}
+		
 	}
 	
 	void heal() {
